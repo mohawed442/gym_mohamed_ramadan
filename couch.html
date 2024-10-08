@@ -1,0 +1,64 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>الكابتن</title>
+<!-- ملف يتبعه جميع المبرمجين -->
+<link rel="stylesheet" href="css/normalize.css">
+<!-- ملف الايكونات  -->
+<link rel="stylesheet" href="css/all.min.css">
+<!-- ملف bootstrab . css  -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!--  ملفات عدل الاسم css الخارجيه -->
+<link rel="stylesheet" href="css/main.css">
+<!-- تنسقات خطوط جوجل  -->
+
+
+</head>
+<body class="bg-dark text-light"> 
+      <div class="fullButton container  ">
+            <p  id="reset" class="toButon reset " >اعاده ضبط</p>
+            <p class="toButon " id="addSing">قائمه التسجيل </p>
+            <p class="toButon" id="sing">الطلاب المسجلين </p>
+            <p class="toButon" id="DeltaName">المحذوف مواخرا</p>
+            <p class="toButon " id="subscript">الاشتركات </p>
+            
+      </div>
+      
+      <form class=" d-none mt-5" id="form">
+      <div class="bg-body form  m-auto p-3 my-2 rounded-3">
+            <div class="input">
+                  <label for="name">What is your name</label>
+                  <input type="text" placeholder="What is your name" id="name">
+            </div>
+            <div class="input">
+                  <label for="old">How old are you</label>
+                  <input type="number" placeholder="How old are you" id="old">
+            </div>
+            <div class="input">
+                  <label for="weigh">How much do you weigh</label>
+                  <input type="number" placeholder="How much do you weigh" id="weigh">
+            </div>
+            <div class="input">
+                  <label for="long">How long have you been exercising?</label>
+                  <input type="number" placeholder="How long have you been exercising?" id="long">
+            </div>
+
+            <div class="input">
+                  <label for="button"></label>
+                  <input type="button"  value="send" id="button">
+            </div>
+            
+      </div>  
+      </form>
+
+      <table class="d-none table" id="tbody">
+      </table>
+      <table class="d-none table tableDelta " id="table4">
+      </table>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/json.js"></script>
+<script src="js/mo.js"></script>
+<!-- ملف bootstrab . js  -->
+</body>
+</html>
