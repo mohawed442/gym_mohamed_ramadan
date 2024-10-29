@@ -1,4 +1,7 @@
-
+:root{
+ --gre : #6fcfec ;
+ --gre1 : #62e5da ;
+}
 body{
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -86,7 +89,7 @@ tr{
 .toButon{
   color: black;
   text-decoration: none;
-  background-color: rgb(28, 119, 28);
+  background-color: var(--gre1);
   padding: 10px 30px;
   margin: 20px 0 20px 20px ;
   border-radius: 20px;
@@ -100,10 +103,10 @@ tr{
 }
 
 .active{
-  background-color: rgb(6, 255, 6);
+  background-color: var(--gre);
 }
 .toButon:hover{
-    background-color: rgb(98, 229, 98);
+    background-color: var(--gre1);
       /* transform: translate(-10% , 0); */
       border-radius: 6px;
 
@@ -130,11 +133,11 @@ li , a{
 }
 .login{
   border-radius: 8px;
-  background-color: #62e562;
+  background-color: var(--gre1);
 
 }
 .login:hover{
-  background-color: #54eb54;
+  background-color: var(--gre);
   
 
 }
@@ -171,7 +174,7 @@ li , a{
 .divImg{
   width:90%;
   height: 90%;
-  border: solid green 15px;
+  border: solid var(--gre1) 15px;
 }
 .divImg img{
   width: 100%;
@@ -184,7 +187,7 @@ li , a{
 
 /* :start sectionThree img  */
 .three{
-  background-color: #54eb5470;
+  background-color: var(--gre) ;
   padding: 0;
 }
 .three .imgBoy{
@@ -212,7 +215,7 @@ li , a{
 
 }
 .icon i:hover{
-  color: #54eb54;
+  color: var(--gre);
 }
 /* :end sectionFour img and text  */
 
@@ -277,7 +280,7 @@ li , a{
 }
 
 .day.registered {
-    background-color: green;
+    background-color: var(--gre1);
     color: white;
 }
 
@@ -324,7 +327,7 @@ body {
 /* :end popup */
 /* :start whatsappButton */
 #whatsappButton {
-  background-color: #25D366; /* لون واتساب */
+  background-color: var(--gre); /* لون واتساب */
   color: white;
   border: none;
   padding: 10px 30px;
@@ -334,7 +337,7 @@ body {
   transition: 1s;
 }
 #whatsappButton:hover{
-  background-color: rgb(98, 229, 98);
+  background-color: var(--gre1);
   /* transform: translate(-10% , 0); */
   border-radius: 6px;
 }
@@ -366,10 +369,10 @@ body {
 
 }
 .act{
-  border: solid #54eb54 3px ; 
+  border: solid var(--gre) 3px ; 
 }
 .activ{
-  background-color: #54eb54;
+  background-color: var(--gre);
 }
 /* :end  option number  */
 
@@ -379,7 +382,7 @@ body {
   text-align: center;
   min-width: 150px ;
   max-width: 600px;
-  background-color: #54eb54; 
+  background-color: var(--gre); 
   padding: 20px 0;
   border-radius: 6px;
   margin:10px;
@@ -388,7 +391,7 @@ body {
 }
 .buttons h3:hover{
   color: white;
-  background-color:#62e562 ;
+  background-color:var(--gre1) ;
 
 }
 /* :end buttons style  */
@@ -417,10 +420,10 @@ td video:hover {
 
 }
 /* .tableBrj tr:nth-child(odd) {
-  background-color: #54eb54bd;
+  background-color: var(--gre)bd;
 }
 .tableBrj tr:nth-child(1) {
-  background-color: #54eb54bd;
+  background-color: var(--gre)bd;
 } */
 /* :end prj videu  */
 /* :end student.html */
