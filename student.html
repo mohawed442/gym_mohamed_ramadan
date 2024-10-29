@@ -56,7 +56,7 @@
 
     <div class="container " id="">
         <div class="buttons d-flex justify-content-evenly flex-wrap  ">
-            <h3 class="" id=""></h3>
+            <h3 class="" id="Chest">Chest</h3>
             <h3 class="" id="puk">puk</h3>
             <h3 class="" id="shoulder">shoulder</h3>
             <h3 class="" id="bicep"> BICEP x TRICEP</h3>
@@ -65,7 +65,7 @@
     </div>
 
 
-<div class=" d-none" id="" >
+<div class=" d-none" id="prgChest" >
 
     <div class="container " id="pukP">
         <div class="buttons d-flex justify-content-evenly flex-wrap  ">
@@ -1302,11 +1302,14 @@ reset.onclick=function () {
 // start frist buttons
 
 
+
+let Chest = document.getElementById('Chest')
 let puk = document.getElementById('puk')
 let shoulder = document.getElementById('shoulder')
 let BICEP = document.getElementById('bicep')
 let Leg = document.getElementById('leg')
 
+let prgChest = document.getElementById('prgChest')
 let prgPuk = document.getElementById('prgPuk')
 let prgShoulder = document.getElementById('prgShoulder')
 let prgBicep = document.getElementById('prgBicep')
@@ -1321,6 +1324,7 @@ function re (mo) {
     mo.classList.remove("d-none") 
 }   
 
+Chest.addEventListener("click",() => re(prgChest))
 puk.addEventListener("click",() => re(prgPuk))
 shoulder.addEventListener("click",() => re(prgShoulder))
 BICEP.addEventListener("click",() => re(prgBicep))
