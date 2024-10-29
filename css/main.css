@@ -378,7 +378,7 @@ body {
 
 /* :start buttons style  */
 
-.buttons h3{
+.buttonss h3 , .buttons h3{
   text-align: center;
   min-width: 150px ;
   max-width: 600px;
@@ -389,10 +389,24 @@ body {
   cursor: pointer;
   transition: .6s;
 }
-.buttons h3:hover{
+.buttonss h3:hover{
   color: white;
   background-color:var(--gre1) ;
 
+}
+.buttonss .activ{
+  background-color: var(--gre1);
+  box-shadow: 2px 2px 15px 9px var(--gre1);
+}
+
+.buttons h3{
+  background-color: #3392d1;
+}
+
+.buttons .activ{
+ border: solid 3px black ;
+ color: white;
+ background-color: var(--gre1);
 }
 /* :end buttons style  */
 

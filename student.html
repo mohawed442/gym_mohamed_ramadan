@@ -55,8 +55,8 @@
     </div> -->
 
     <div class="container " id="">
-        <div class="buttons d-flex justify-content-evenly flex-wrap row ">
-            <h3 class=" col-lg-2 col-md-4 col-sm-12" id="Chest">Chest</h3>
+        <div class="buttonss ms-3 row ">
+            <h3 class=" col-lg-2 col-md-4 col-sm-12 " id="Chest">Chest</h3>
             <h3 class=" col-lg-2 col-md-4 col-sm-12" id="puk">puk</h3>
             <h3 class=" col-lg-2 col-md-4 col-sm-12" id="shoulder">shoulder</h3>
             <h3 class=" col-lg-2 col-md-4 col-sm-12" id="bicep"> BICEP x TRICEP</h3>
@@ -69,7 +69,7 @@
 
     <div class="container " id="pukP">
         <div class="buttons d-flex justify-content-evenly flex-wrap  ">
-            <h3 class="bu" id="barb">بار واطي</h3>
+            <h3 class="bu activ" id="barb">بار واطي</h3>
             <h3 class="bu" id="tgmy3">تجميع عالي</h3>
             <h3 class="bu" id="kibolt">كيبول من فوق</h3>
             <h3 class="bu" id="frasha">فراشه</h3>
@@ -250,7 +250,7 @@
 
     <div class="container " id="">
         <div class="buttons d-flex justify-content-evenly flex-wrap  ">
-            <h3 class=" puk" > بار ع المعده عكس</h3>
+            <h3 class=" puk activ " > بار ع المعده عكس</h3>
             <h3 class=" puk" > سحب امامي واسع</h3>
             <h3 class=" puk" > سحب دمبل </h3>
             <h3 class=" puk" >سحب امامي ضيق</h3>
@@ -458,7 +458,7 @@
 
     <div class="container " id="">
         <div class="buttons d-flex justify-content-evenly flex-wrap  ">
-            <h3 class=" shoulder" > تجميع دامبل </h3>
+            <h3 class=" shoulder activ" > تجميع دامبل </h3>
             <h3 class=" shoulder" >  رافرفه جنبي </h3>
             <h3 class=" shoulder" > بار امامي</h3>
             <h3 class=" shoulder" > قبضه جنبي</h3>
@@ -695,7 +695,7 @@
 
     <div class="container " id="">
         <div class="buttons d-flex justify-content-evenly flex-wrap  ">
-            <h3 class="Bicep" >  حبل فرنساوي </h3>
+            <h3 class="Bicep activ" >  حبل فرنساوي </h3>
             <h3 class="Bicep" > مسطره من فوق</h3>
             <h3 class="Bicep" > كيبول رافص</h3>
             <h3 class="Bicep" > دكه</h3>
@@ -960,7 +960,7 @@
 
     <div class="container " id="">
         <div class="buttons d-flex justify-content-evenly flex-wrap  ">
-            <h3 class="leg" >  اسكواد  </h3>
+            <h3 class="leg activ" >  اسكواد  </h3>
             <h3 class="leg" > مقصات </h3>
             <h3 class="leg" > امامي</h3>
             <h3 class="leg" > خلفي</h3>
@@ -1301,6 +1301,14 @@ reset.onclick=function () {
 }
 // start frist buttons
 
+let butto = document.querySelectorAll(".buttons h3");
+console.log(butto);
+butto.forEach((ele, index) => {
+    ele.addEventListener('click', () => {
+        butto.forEach((item) => item.classList.remove("activ")); // لإزالة الكلاس "activ" من جميع العناصر
+        ele.classList.add("activ");
+    });
+});
 
 
 let Chest = document.getElementById('Chest')
@@ -1316,20 +1324,26 @@ let prgBicep = document.getElementById('prgBicep')
 let prgLeg = document.getElementById('prgLeg')
 
 
-function re (mo) { 
+function re (mo , no) { 
     prgChest.classList.add("d-none")
     prgPuk.classList.add("d-none")
     prgShoulder.classList.add("d-none")
     prgBicep.classList.add("d-none")
     prgLeg.classList.add("d-none")
+    Chest.classList.remove("activ") 
+    puk.classList.remove("activ") 
+    shoulder.classList.remove("activ") 
+    BICEP.classList.remove("activ") 
+    Leg.classList.remove("activ") 
     mo.classList.remove("d-none") 
+    no.classList.add("activ") 
 }   
 
-Chest.addEventListener("click",() => re(prgChest))
-puk.addEventListener("click",() => re(prgPuk))
-shoulder.addEventListener("click",() => re(prgShoulder))
-BICEP.addEventListener("click",() => re(prgBicep))
-Leg.addEventListener("click",() => re(prgLeg))
+Chest.addEventListener("click",() => re(prgChest , Chest))
+puk.addEventListener("click",() => re(prgPuk ,puk ))
+shoulder.addEventListener("click",() => re(prgShoulder ,shoulder ))
+BICEP.addEventListener("click",() => re(prgBicep , BICEP))
+Leg.addEventListener("click",() => re(prgLeg , Leg))
 
 // end frist buttons
 
