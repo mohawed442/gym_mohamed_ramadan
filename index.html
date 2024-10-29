@@ -18,13 +18,221 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(-135deg, #c850c060, #4159d070);
+}
+
+.wrap-login100 {
+    width: 960px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 177px 130px 33px 95px;
+}
+
+.login100-pic {
+    width: 316px;
+}
+
+.login100-form {
+    width: 290px;
+}
+
+.input100 {
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px 0 68px;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+.focus-input100 {
+    display: block;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    color: rgba(87, 184, 70, 0.8);
+}
+
+.validate-input {
+    position: relative;
+}
+
+.wrap-input100 {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+
+.symbol-input100 {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 35px;
+    pointer-events: none;
+    color: #666666;
+    transition: all 0.4s;
+}
+
+.login100-form-title {
+    font-family: Poppins-Bold;
+    font-size: 24px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 54px;
+}
+
+.container-login100-form-btn {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.login100-form-btn {
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: #57b846;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    transition: all 0.4s;
+}
+
+@media (max-width: 768px) {
+    .wrap-login100 {
+        padding: 100px 80px 33px 80px;
+    }
+    .login100-pic {
+        display: none;
+    }
+    .login100-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .wrap-login100 {
+        padding: 177px 90px 33px 85px;
+    }
+    .login100-pic {
+        width: 35%;
+    }
+    .login100-form {
+        width: 50%;
+    }
+}
+
+
+.exit{
+      right: 30px;
+      top: 30px;
+      cursor: pointer;
+      background-color: #6666665e;
+      border-radius: 50%;
+      padding: 10px;
+}
+.exit:hover{
+      color: white;
+}
 </style>
 </head>
 <body class=" "> 
+
+      <div class="limiter d-none position-fixed top-0 z-2 " id="form">
+
+		<div class="container-login100 position-relative">
+                  <div class="exit position-absolute z-3  " id="exit">
+                        X
+                  </div>
+			<div class="wrap-login100 ">
+
+				<form class="login100-form validate-form m-auto">
+					<span class="login100-form-title">
+						Member Login
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<input class="input100" id="inText" type="text" name="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" id="inPassword" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button id="Login" class="login100-form-btn">
+							Login
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
       <div class="navbar p-3 bg-body-secondary text-black fs-5 position-relative  ">
             <div class="container">
-                  <div class="col-lg-4  col-md-6 align-items-center">logo</div>
+                  <div class="col-lg-4 col-md-6 align-items-center">logo</div>
                   <div class="col-lg-8 col-md-1 ">
                         <p class="d-lg-none " id="icon">hallo</p>
                         <ul id="list" class=" d-none d-lg-flex  justify-content-lg-around  align-items-center">
@@ -146,7 +354,60 @@
             }
         });
 //      end nevBar  
+// start form 
+let api1 = [{
+      name : "محمد احمد" ,
+      old : 20  ,
+      password :123 
+} ,
+ {
+      name : "احمد" ,
+      old : 20  ,
+      password : 12345 
+}]
 
+let exit = document.getElementById('exit') ;
+let form = document.getElementById('form') ;
+let inText = document.getElementById('inText') 
+let inPassword = document.getElementById('inPassword')
+let Login = document.getElementById('Login')
+
+
+exit.onclick = function () {
+      form.classList.add('d-none')
+}
+Login.addEventListener('click', (event) => {
+    event.preventDefault(); // يمنع إعادة تحميل الصفحة
+    
+    const username = inText.value; 
+    const password = inPassword.value;
+
+    // تحقق مما إذا كان المستخدم موجودًا
+    const user = api1.find(user => user.name == username);
+
+    if (user) {
+            window.location.replace('student.html');
+      if (user.password == password) {
+            window.location.replace('student.html');
+        } else {
+            alert('كلمة المرور خاطئة!');
+           
+        }
+    } else {
+          alert('المستخدم غير موجود!');
+
+    }
+});
+document.addEventListener('DOMContentLoaded', () => {
+    let login = document.querySelectorAll('.login');
+
+    login.forEach((ele) => {
+        ele.addEventListener('click', () => {
+            form.classList.remove('d-none');
+        });
+    });
+});
+// end form 
 
 </script>
 <script src="js/bootstrap.bundle.min.js"></script>
