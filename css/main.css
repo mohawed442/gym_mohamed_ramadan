@@ -291,19 +291,6 @@ input {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 li , a{
   list-style: none;
   color: #000;
@@ -441,7 +428,7 @@ input, select {
   font-size: 16px;
 }
 
-button {
+.form-group  button {
   width: 100%;
   padding: 12px;
   background-color: #007bff;
