@@ -187,7 +187,7 @@
   
                  
                   const title = `
-                  <h3>${meal1Name}</h3>
+                  <h3>${nameFood}</h3>
                   `;
                   resDat.forEach(ele =>{
                       const result = `
