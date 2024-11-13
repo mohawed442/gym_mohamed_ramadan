@@ -126,6 +126,184 @@ tr{
 
 
 
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-login100 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: linear-gradient(-135deg, #c850c060, #4159d070);
+}
+
+.wrap-login100 {
+  width: 960px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 177px 130px 33px 95px;
+}
+
+.login100-pic {
+  width: 316px;
+}
+
+.login100-form {
+  width: 290px;
+}
+
+.input100 {
+  font-family: Poppins-Medium;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  display: block;
+  width: 100%;
+  background: #e6e6e6;
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 30px 0 68px;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+.focus-input100 {
+  display: block;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  color: rgba(87, 184, 70, 0.8);
+}
+
+.validate-input {
+  position: relative;
+}
+
+.wrap-input100 {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 10px;
+}
+
+.symbol-input100 {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 35px;
+  pointer-events: none;
+  color: #666666;
+  transition: all 0.4s;
+}
+
+.login100-form-title {
+  font-family: Poppins-Bold;
+  font-size: 24px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 54px;
+}
+
+.container-login100-form-btn {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.login100-form-btn {
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+  text-transform: uppercase;
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  background: #57b846;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  transition: all 0.4s;
+}
+
+@media (max-width: 768px) {
+  .wrap-login100 {
+      padding: 100px 80px 33px 80px;
+  }
+  .login100-pic {
+      display: none;
+  }
+  .login100-form {
+      width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .wrap-login100 {
+      padding: 177px 90px 33px 85px;
+  }
+  .login100-pic {
+      width: 35%;
+  }
+  .login100-form {
+      width: 50%;
+  }
+}
+
+
+.exit{
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+    background-color: #6666665e;
+    border-radius: 50%;
+    padding: 10px;
+}
+.exit:hover{
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 li , a{
   list-style: none;
   color: #000;
@@ -234,6 +412,139 @@ li , a{
 
 
 /* :start student.html */
+
+ /* تنسيق العنوان */
+ .section-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #007bff;
+}
+
+/* تنسيق الحقول */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 500;
+  color: #333;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.result {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.noo {
+  background-color: #eee;
+  padding: 20px;
+  margin: 50px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.result h3 {
+  text-align: center;
+  font-size: 35px;
+  padding-bottom: 25px;
+  
+  color: #007bff;
+}
+
+.result p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.result strong {
+  color: #007bff;
+  padding-left: 5px;
+}
+
+
+.row {
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+}
+
+.col-3 {
+flex: 1;
+padding: 10px;
+box-sizing: border-box;
+}
+
+/* تنسيق العناصر داخل كل عمود */
+.checkbox-label {
+display: block;
+font-size: 16px;
+font-weight: bold;
+margin-bottom: 5px;
+color: #333;
+}
+
+.checkbox-input {
+width: 25px;
+height: 25px;
+margin-top: 10px;
+cursor: pointer;
+transition: transform 0.3s ease;
+}
+
+.checkbox-input:checked {
+transform: scale(1.2); /* تكبير الـcheckbox عند تحديده */
+}
+
+/* تأثير hover على الـcheckbox */
+.checkbox-input:hover {
+transform: scale(1.2);
+}
+
+/* تنسيق الـcol عند تصغير الشاشة */
+@media (max-width: 768px) {
+.row {
+  flex-direction: column;
+  align-items: center;
+}
+
+.col-3 {
+  margin-bottom: 20px;
+}
+}
+
+
+
+
 
 .bo {
     font-family: Arial, sans-serif;

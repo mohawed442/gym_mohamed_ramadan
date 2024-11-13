@@ -18,10 +18,53 @@
 <body class="bo">
 
 
+    <section id="section" class="container d-none ">
+        <h2 class="section-title">حاسبة احتياج الجسم من البروتين والسعرات الحرارية</h2>
+    
+        <!-- عرض المدخلات بطريقة فريدة -->
+        <div class="form-group">
+            <label for="weight">الوزن (بالكيلو): </label>
+            <input type="number" id="weight" placeholder="الوزن" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="height">الطول (بـ سم): </label>
+            <input type="number" id="height" placeholder="الطول" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="age">العمر: </label>
+            <input type="number" id="age" placeholder="العمر" required>
+        </div>
+        <div>
+            
+        </div>
+        <div class="form-group">
+            <label for="gender">الجنس: </label>
+            <select id="gender">
+                <option value="male">ذكر</option>
+                <option value="female">أنثى</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="activityLevel">مستوى النشاط: </label>
+            <select id="activityLevel">
+                <option value="1.2">قليل النشاط</option>
+                <option value="1.375">نشاط خفيف</option>
+                <option value="1.55">نشاط متوسط</option>
+                <option value="1.725">نشاط عالي</option>
+                <option value="1.9">نشاط شديد</option>
+            </select>
+            <button class="mt-5" onclick="calculate()">احسب</button>
+
+        </div>
+</section>
+
     <div class="container " >
         <div class="m-auto my-4" >
             <p  id="reset" class="toButon reset  " >اعاده ضبط</p>
-            <button id="whatsappButton" >إرسال التقدم الشهري عبر واتساب</button>
+            <p id="formButton" class="toButon "> حساب السعرات واضافه الواجبات </p>
         </div>
             
         <div id="popup" class="d-none">
@@ -36,6 +79,9 @@
         <hr> 
 
 
+        <div class="food container mt-5 ">
+            <div id="result" class="result"></div>
+        </div>
 
         <!-- <div class="">
             <div class="position-relative">
@@ -1139,155 +1185,25 @@
 </div> 
 
 <div class="food container mt-5 ">
-    <div class="row gap-4 ">
-        <div class="foodn login p-3  col-lg-3 col-md-5 col-sm-12 " >
-            <h2>الوجبه الاولي</h2>
-            <p class="fs-3 text-black-50">3بيضات+ معلقه زبده فول + تفاحه +جرجير+خيار+كوبايه بقدونس</p>
-        </div>
-        <div class="foodn login p-3 col-lg-3 col-md-5 col-sm-12 ">
-            <h2>الوجبه التانيه</h2>
-            <p class="fs-3 text-black-50">80 رز بسماتي مسلوق+100صدور او تونه او لحمه+بقدونس</p>
-        </div>
-        <div class="foodn login p-3 col-lg-3 col-md-5 col-sm-12 ">
-            <h2>الوجبه التالته</h2>
-            <p class="fs-3 text-black-50">100بطاطاس مسلوق+80جرام صدور+ جرجير وبقدونس</p>
-        </div>
-        <div class="foodn login p-3  col-lg-3 col-md-5 col-sm-12 ">
-            <h2>الوجبه الرابعة</h2>
-            <p class="fs-3 text-black-50 ">علبه زبادي يوناني+كوبايه بقدونس</p>
-        </div>
-    </div>
+    <div id="resultt" class="result resultt">
 </div>
 
 </body>
 <script>
 
-const daysInMonth = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate();
-const currentDate = new Date();
-const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
-const currentDay = currentDate.getDate();
-const currentDayOfWeek = firstDayOfMonth.getDay();
-const weekDays = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
+let formButton = document.getElementById("formButton");
+console.log(formButton);
+let section = document.getElementById("section");
 
-const calendar = document.getElementById("calendar");
+console.log(section);
 
-// إضافة أيام الشهر
-for (let i = 0; i < currentDayOfWeek; i++) {
-    const emptyDiv = document.createElement("div");
-    calendar.appendChild(emptyDiv);
+formButton.onclick = function () {
+    section.classList.toggle('d-none'); // تأكد من وضع 'd-none' بين علامات اقتباس
 }
 
-for (let day = 1; day <= daysInMonth; day++) {
-    const dayDiv = document.createElement("div");
-    dayDiv.classList.add("day");
-    dayDiv.textContent = day;
-
-    // إضافة اسم اليوم تحت الرقم
-    const dayNameDiv = document.createElement("div");
-    const dayOfWeek = (currentDayOfWeek + day - 1) % 7; // حساب اسم اليوم
-    dayNameDiv.classList.add("day-name");
-    dayNameDiv.textContent = weekDays[dayOfWeek];
-    dayDiv.appendChild(dayNameDiv);
 
 
 
-    // start Add interactive to today
-    if (day == currentDay) {
-        dayDiv.addEventListener("click", () => {
-            const isRegistered = confirm("هل أنت مستعد لبدا التمرين ؟");
-            document.getElementById("popup").classList.add("d-flex");
-            document.getElementById("popup").classList.remove("d-none");
-            if (isRegistered) {
-                dayDiv.classList.remove("not-registered");
-                dayDiv.classList.add("registered");
-                setTimeout(() => {
-                document.getElementById("popup").classList.remove("d-flex");
-                document.getElementById("popup").classList.add("d-none");
-                document.getElementById("calendar").classList.add('d-none')                
-            }, 1000);
-            localStorage.removeItem(`clcikNo-${currentDay}` , currentDay)
-            localStorage.setItem(`clcik-${currentDay}` , currentDay)
-            } else {
-                dayDiv.classList.remove("registered");
-                dayDiv.classList.add("not-registered");
-                document.getElementById("poupText").textContent = `يلا اخرج من هنا`
-                setTimeout(() => {
-                    document.getElementById("poupText").textContent = `انت لسه هنا انا مش قولت لك اخرج من هنا`
-            }, 4000);
-            localStorage.removeItem(`clcik-${currentDay}` , currentDay)
-            localStorage.setItem(`clcikNo-${currentDay}` , currentDay)
-            
-            }
-        });
-    } else {
-        dayDiv.classList.add("disabled");
-    }
-
-
-    // end Add interactive to today
-
-
-// start Show recorded data within local storage
-    let ddo  = document.querySelectorAll(".day") 
-    let singYes = 0 ; 
-    let singNo = 0 ; 
-// لتحميل حالة الخلفية المحفوظة من localStorage عند التحميل
-document.addEventListener('DOMContentLoaded', function () {
-  ddo.forEach((ele, index) => {
-        const storedBackgroundColor = localStorage.getItem(`clcik-${index+1}`);
-        if (storedBackgroundColor) {
-            ele.classList.add("registered");
-            singYes++
-
-        }
-        localStorage.setItem('singYes' , singYes) ;
-    });
-});
-document.addEventListener('DOMContentLoaded', function () {
-  ddo.forEach((ele, index) => {
-        const storedBackgroundColor = localStorage.getItem(`clcikNo-${index+1}`);
-        if (storedBackgroundColor) {
-            ele.classList.add("not-registered");
-            singNo++
-            
-            
-        }
-        localStorage.setItem('singNo' , singNo) ;
-    });
-});
-
-
-
-
-    calendar.appendChild(dayDiv);
-}
-
-// end Show recorded data within local storage
-
-// start Send data to me via WhatsApp
-let ss = localStorage.getItem('singYes')
-let sss = localStorage.getItem('singNo')
-console.log('قيمة singYes:', ss);
-console.log('قيمة singNo:', sss);
-document.addEventListener('DOMContentLoaded', function () {
-    console.log(currentDay);
-    
-    if (Number(currentDay) >= 26 ){
-        document.getElementById("whatsappButton").addEventListener("click", function() {
-    const phoneNumber = "1234567890"; // رقم الهاتف الذي تريد إرسال الرسالة إليه
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(`الايام المسجله هذا الشهر هي ${22 + ss } الايام الذي لم يتم التسجيل فيها هي  ${sss + 20} `)} الشهر هذا ${daysInMonth} يوما هذا بيانات   ${firstDayOfMonth} الايام الذي لم يفتح بها الويب سايت نهائيا ${+daysInMonth - +ss + +sss   + 20}`;
-
-    window.open(whatsappURL, "_blank"); // فتح الرابط في نافذة جديدة
-});
-    }else{
-        
-        document.getElementById("whatsappButton").addEventListener("click", function() {
-            document.getElementById("whatsappButton").textContent = "انت مازلت في اول الشهر جرب مرا اخري في اخر اربع ايام في الشهر "
-            document.getElementById("whatsappButton").style.background = 'red'
-        });
-    }
-});
-// end Send data to me via WhatsApp
 
 let reset = document.getElementById('reset')
 reset.onclick=function () {
@@ -1419,4 +1335,7 @@ buttons4.forEach((ele , index)=>{
 // end brj buttons
 
 </script>
+<script src="js/scForm.js"></script>
+<script src="js/json.js"></script>
+
 </html>
