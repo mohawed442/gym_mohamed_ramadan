@@ -194,7 +194,7 @@
 //      end nevBar  
 // start form 
 let api1 = [{
-      name : "محمد احمد" ,
+      name : "محمد" ,
       old : 20  ,
       password : 123 
 } ,
@@ -224,15 +224,13 @@ Login.addEventListener('click', (event) => {
     const user = api1.find(user => user.name == username);
 
     if (user) {
-            window.location.replace('student.html');
       if (user.password == password) {
             window.location.replace('student.html');
         } else {
             alert('كلمة المرور خاطئة!');
-           
         }
     } else {
-          alert('المستخدم غير موجود!');
+          alert(' المستخدم غير موجود او !');
 
     }
 });
